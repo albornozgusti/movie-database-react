@@ -5,7 +5,7 @@ import Header from './components/header'
 function App() {
     return (
         <Container>
-            <Header />
+            <Header title='Gustalb MDB'/>
         </Container>
     )
 }

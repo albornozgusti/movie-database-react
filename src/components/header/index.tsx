@@ -1,14 +1,14 @@
 import React from "react";
 
 interface ChildrenContainer {
-    children: React.ReactNode
+    title: string;
 }
 
-const Header = ({children}: ChildrenContainer) => {
+const Header = ({title}: ChildrenContainer) => {
     return(
     <header className="header">
         <div>LOGO</div>
-        <div>Gustalb MDB</div>
+        <div>{title}</div>
     </header>
     )
 }
