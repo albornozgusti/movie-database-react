@@ -1,6 +1,6 @@
 const Search = () => {
     return(
-        <nav id="contenido">
+        <nav id="contenido" className="mt-16">
             <div id="busqueda">
             <span>Titulo:</span><input type="text" id="textoBusqueda" />
                 <input type="button" id="btnBuscar" value="Buscar" />
