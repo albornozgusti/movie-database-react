@@ -2,14 +2,14 @@
 import Footer from './components/footer'
 import Header from './components/header'
 import Results from './components/results'
-import Search from './components/search'
+import SearchContainer from './components/SearchContainer'
 
 function App() {
   
   return (
     <>
         <Header />
-        <Search />
+        <SearchContainer />
         <Results />
         <Footer />
     </>
