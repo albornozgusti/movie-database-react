@@ -1,19 +1,7 @@
-
-import Footer from './components/footer'
-import Header from './components/header'
-import Results from './components/results'
-import SearchContainer from './components/SearchContainer'
+import Home from "./pages/home";
 
 function App() {
-  
-  return (
-    <>
-        <Header />
-        <SearchContainer />
-        <Results />
-        <Footer />
-    </>
-  )
+    return <Home />;
 }
 
 export default App;
