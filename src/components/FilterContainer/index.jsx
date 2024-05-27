@@ -3,7 +3,7 @@ import Button from "../Button";
 
 export default function FilterContainer() {
     return (
-        <div className="px-4">
+        <div className="px-8 mx-3 rounded-b-lg border border-blue-950 bg-gray-700">
             
             <label htmlFor="filtro">Filtros</label>
             <br />
