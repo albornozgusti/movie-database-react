@@ -1,15 +1,14 @@
 import Input from "../Input";
 import Button from "../Button";
+import InputField from "../input-field";
 
 export default function FilterContainer() {
     return (
-        <div className="px-4">
+        <div className="px-4 mx-4 rounded-b-lg bg-slate-800">
             
-            <label htmlFor="filtro">Filtros</label>
-            <br />
-            <div className="expandible-content">
-                <span>Año de lanzamiento: </span>
-                <input type="text" id="lanzamiento" />
+            <div>
+                <br/>
+                <InputField label="Año de lanzamiento: " type="text" id="lanzamiento"/>
                 <br />
                 <span>Tipo: (serie o pelicula) </span>
                 <br />
@@ -28,6 +27,7 @@ export default function FilterContainer() {
                     value="series"
                     label="Serie"
                 />
+                <br />
                 <br />
                 <Button
                     type="button"

@@ -2,13 +2,16 @@ import PropTypes from "prop-types";
 
 export default function Input({ type, id, label, name }) {
     return (
+        <>
         <input
-            className="px-2 py-2 bg-pink-400"
+            className="px-2 py-2 mx-2 bg-pink-400"
             type={type}
             id={id}
             label={label}
             name={name}
-        />
+            />
+        {label}
+            </>
     );
 }
 

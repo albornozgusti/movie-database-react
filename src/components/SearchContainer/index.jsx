@@ -12,7 +12,7 @@ const SearchContainer = () => {
         setShowFilters(!showFilters);
     };
     return (
-        <nav id="contenido" className="mt-16 flex flex-col">
+        <nav id="contenido" className="mt-16 px-2 flex flex-col">
             <div id="busqueda" className="flex flex-row">
                 <InputField
                     className="flex-initial w-64"
