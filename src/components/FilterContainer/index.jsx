@@ -7,7 +7,7 @@ export default function FilterContainer({searchParams, setSearchParams}) {
     
     const {releaseYear, type} = searchParams;
     
-    const handleClick = () =>{
+    const handleCleanFilterButtonClick = () =>{
         setSearchParams({
             ...searchParams,
             releaseYear: '',
@@ -20,6 +20,14 @@ export default function FilterContainer({searchParams, setSearchParams}) {
         setSearchParams({
             ...searchParams,
             [id]: value
+        })
+    }
+
+    const handleRadioChange = (target) => {
+        const {name, value} = target;
+        setSearchParams({
+            ...searchParams,
+            [name]: value
         })
     }
     return (
@@ -42,6 +50,7 @@ export default function FilterContainer({searchParams, setSearchParams}) {
                     id="pelicula"
                     value="movie"
                     label="Pelicula"
+                    onChange={e=>handleRadioChange(e.target)}
                 />
                 <br />
                 <Input
@@ -50,6 +59,7 @@ export default function FilterContainer({searchParams, setSearchParams}) {
                     id="serie"
                     value="series"
                     label="Serie"
+                    onChange={e=>handleRadioChange(e.target)}
                 />
                 <br />
                 <br />
@@ -59,7 +69,7 @@ export default function FilterContainer({searchParams, setSearchParams}) {
                     id="btnLimpiar"
                     value="Limpiar Filtros"
                     label="Limpiar Filtros"
-                    onClick={() => handleClick()}
+                    onClick={() => handleCleanFilterButtonClick()}
                 />
                 <br />
             </div>

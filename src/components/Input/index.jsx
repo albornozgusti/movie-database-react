@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Input({ onChange, type, id, label, name, additionalStyles }) {
+export default function Input({ value, onChange, type, id, label, name, additionalStyles }) {
     return (
         <>
             <input
@@ -9,6 +9,7 @@ export default function Input({ onChange, type, id, label, name, additionalStyle
                 id={id}
                 label={label}
                 name={name}
+                value={value}
                 onChange={onChange}
             />
             <span className="px-2">{label}</span>
