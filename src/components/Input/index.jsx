@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Input({ type, id, label, name, additionalStyles }) {
+export default function Input({ onChange, type, id, label, name, additionalStyles }) {
     return (
         <>
             <input
@@ -9,6 +9,7 @@ export default function Input({ type, id, label, name, additionalStyles }) {
                 id={id}
                 label={label}
                 name={name}
+                onChange={onChange}
             />
             <span className="px-2">{label}</span>
         </>
@@ -21,4 +22,5 @@ Input.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
     additionalStyles: PropTypes.string,
+    onChange: PropTypes.func
 };

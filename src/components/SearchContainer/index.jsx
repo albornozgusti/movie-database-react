@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Button";
 import FilterContainer from "../FilterContainer";
 import { LiaFilterSolid } from "react-icons/lia";
 import { FaSearch, FaHistory } from "react-icons/fa";
 import InputField from "../input-field";
 
-const SearchContainer = () => {
+const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
     const [showFilters, setShowFilters] = useState(true);
 
+    console.log(searchParams)
+    const {title, releaseYear, type} = searchParams;
     const toggleFilters = () => {
         setShowFilters(!showFilters);
     };
+
+    const handleChange = (target) => {
+        const {id, value} = target;
+        setSearchParams({
+            ...searchParams,
+            [id]: value
+        })
+    }
+
     return (
         <nav id="contenido" className="mt-16 px-2 flex flex-col">
             <div id="busqueda" className="flex flex-row">
@@ -18,7 +29,8 @@ const SearchContainer = () => {
                     className="flex-initial w-64"
                     label="Titulo: "
                     type="text"
-                    id="textoBusqueda"
+                    id="title"
+                    onChange={e=>handleChange(e.target)}
                 />
                 <Button
                     className="flex-initial w-64"
@@ -27,6 +39,7 @@ const SearchContainer = () => {
                     value="Buscar"
                     label="Buscar"
                     icon={<FaSearch />}
+                    onClick={() => console.log('presione buscar')}
                 />
                 <Button
                     className="flex-initial w-64"
@@ -46,7 +59,7 @@ const SearchContainer = () => {
                     onClick={toggleFilters}
                     icon={<LiaFilterSolid />}
                 />
-                {showFilters && <FilterContainer />}
+                {showFilters && <FilterContainer searchParams={searchParams} setSearchParams={setSearchParams}/>}
             </div>
         </nav>
     );
