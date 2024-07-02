@@ -1,12 +1,12 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 import Input from "../Input";
 import Button from "../Button";
 import InputField from "../input-field";
 
 export default function FilterContainer({searchParams, setSearchParams}) {
     
-    const {releaseYear, type} = searchParams;
-    
+    const {releaseYear} = searchParams;
+
     const handleCleanFilterButtonClick = () =>{
         setSearchParams({
             ...searchParams,
@@ -75,4 +75,9 @@ export default function FilterContainer({searchParams, setSearchParams}) {
             </div>
         </div>
     );
+}
+
+FilterContainer.propTypes = {
+    searchParams: PropTypes.object,
+    setSearchParams: PropTypes.func
 }

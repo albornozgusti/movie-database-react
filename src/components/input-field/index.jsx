@@ -16,7 +16,7 @@ export default function InputField({ label, value, type, id, onChange }) {
     );
 }
 
-InputField.PropTypes = {
+InputField.propTypes = {
     label: PropTypes.string,
     type: PropTypes.string,
     id: PropTypes.string,

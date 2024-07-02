@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import Button from "../Button";
 import FilterContainer from "../FilterContainer";
@@ -64,5 +65,16 @@ const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
         </nav>
     );
 };
+
+SearchContainer.propTypes = {
+    searchParams: PropTypes.shape({
+        title: PropTypes.string,
+        releaseYear: PropTypes.string,
+        type: PropTypes.string    
+    }),
+    setSearchParams: PropTypes.func,
+    setResults: PropTypes.func,
+    
+}
 
 export default SearchContainer;
