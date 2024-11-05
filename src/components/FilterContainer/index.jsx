@@ -51,6 +51,8 @@ export default function FilterContainer({searchParams, setSearchParams}) {
                     value="movie"
                     label="Pelicula"
                     onChange={e=>handleRadioChange(e.target)}
+                    defaultChecked
+                    checked={'movie' === searchParams.type}
                 />
                 <br />
                 <Input
@@ -60,6 +62,7 @@ export default function FilterContainer({searchParams, setSearchParams}) {
                     value="series"
                     label="Serie"
                     onChange={e=>handleRadioChange(e.target)}
+                    checked={'series' === searchParams.type}
                 />
                 <br />
                 <br />

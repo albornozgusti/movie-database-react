@@ -25,16 +25,16 @@ const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
 
     return (
         <nav id="contenido" className="mt-16 px-2 flex flex-col">
-            <div id="busqueda" className="flex flex-row">
+            <div id="busqueda" className="flex flex-row flex-wrap content-stretch">
                 <InputField
-                    className="flex-initial w-64"
+                    className="w-64"
                     label="Titulo: "
                     type="text"
                     id="title"
                     onChange={e=>handleChange(e.target)}
                 />
                 <Button
-                    className="flex-initial w-64"
+                    className="w-64"
                     type="button"
                     id="btnBuscar"
                     value="Buscar"
@@ -43,7 +43,7 @@ const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
                     onClick={() => console.log('presione buscar')}
                 />
                 <Button
-                    className="flex-initial w-64"
+                    className="w-64"
                     type="button"
                     id="btnHistorial"
                     value="Historial de Búsqueda"
