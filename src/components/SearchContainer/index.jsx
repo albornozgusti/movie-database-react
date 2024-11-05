@@ -5,9 +5,13 @@ import FilterContainer from "../FilterContainer";
 import { LiaFilterSolid } from "react-icons/lia";
 import { FaSearch, FaHistory } from "react-icons/fa";
 import InputField from "../input-field";
+import {omdbGetList} from '../../services/omdb';
+
 
 const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
-    const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(true);
+  const apiUrl = process.env.VITE_API_URL;
+  const apiKey = process.env.VITE_API_KEY;
 
     console.log(searchParams)
     const {title, releaseYear, type} = searchParams;
@@ -21,6 +25,19 @@ const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
             ...searchParams,
             [id]: value
         })
+    }
+    const handleSearch = async () => {
+      try{
+        const response = await omdbGetList({
+          apiUrl: apiUrl,
+          apiKey: apiKey,
+          ...searchParams
+        });
+        console.log(response);
+        setResults(response);
+      } catch(error){
+        console.error("Error...", error)
+      }
     }
 
     return (
@@ -40,7 +57,7 @@ const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
                     value="Buscar"
                     label="Buscar"
                     icon={<FaSearch />}
-                    onClick={() => console.log('presione buscar')}
+                    onClick={handleSearch}
                 />
                 <Button
                     className="w-64"
