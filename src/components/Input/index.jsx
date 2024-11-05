@@ -12,7 +12,6 @@ export default function Input({ value, onChange, type, id, label, name, checked,
                 value={value}
                 onChange={onChange}
                 checked={checked}
-                defaultChecked={defaultChecked}
             />
             <span className="px-2">{label}</span>
         </>
