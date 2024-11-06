@@ -7,7 +7,7 @@ const Results = ({ results }) => {
       <>
             <p>Aqui se mostrarian los resultados de la Busqueda</p>
             <p>para acceder a los detalles, haga click/tap en la pelicula</p>
-        <section id="resultados" className="flex flex-row flex-wrap my-1 py-1 bg-slate-600">
+        <section id="resultados" className="flex flex-row flex-wrap py-1 bg-slate-600 w-9/12">
             <ResultsTable data={results.Search}/>
         </section>
       </>

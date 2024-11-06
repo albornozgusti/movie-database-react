@@ -41,7 +41,7 @@ const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
     }
 
     return (
-        <nav id="contenido" className="mt-16 px-2 flex flex-col">
+        <nav id="contenido" className="mt-16 px-2 flex flex-col w-9/12">
             <div id="busqueda" className="flex flex-row flex-wrap content-stretch">
                 <InputField
                     className="w-64"

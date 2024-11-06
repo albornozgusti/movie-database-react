@@ -14,7 +14,7 @@ export default function Home() {
     const [results, setResults] = useState([]);
     
     return (
-        <div className="flex flex-col h-screen justify-between bg-slate-600 text-zinc-100">
+        <div className="flex flex-col min-h-screen h-auto justify-between items-center bg-slate-600 text-zinc-100">
             <Header />
             <SearchContainer searchParams={searchParams} setSearchParams={setSearchParams} setResults={setResults}/>
             <Results results={results}/>
