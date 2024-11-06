@@ -4,16 +4,18 @@ import ResultsTable from '../resultsTable';
 
 const Results = ({ results }) => {
     return (
-        <section id="resultados" className="my-1 py-1">
-            <h1>Aqui se mostrarian los resultados de la Busqueda</h1>
-            <h1>para acceder a los detalles, haga click/tap en la pelicula</h1>
-            <ResultsTable />
+      <>
+            <p>Aqui se mostrarian los resultados de la Busqueda</p>
+            <p>para acceder a los detalles, haga click/tap en la pelicula</p>
+        <section id="resultados" className="flex flex-row flex-wrap my-1 py-1 bg-slate-600">
+            <ResultsTable data={results.Search}/>
         </section>
+      </>
     )
 }
 
 Results.propTypes = {
-  results: PropTypes.arrayOf(PropTypes.object)
+  results: PropTypes.object
 }
 
 export default Results;
