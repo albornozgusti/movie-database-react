@@ -17,6 +17,19 @@ const omdbGetList = (params) => {
   })
 }
 
+const omdbGetItem = (params) => {
+  const {
+    apiUrl,
+    apiKey,
+    omdbId
+  } = params;
+  return axios.get(`${apiUrl}apikey=${apiKey}&i=${omdbId}`)
+  .then((response) => {
+    return response.data;
+  })
+}
+
 export {
-  omdbGetList
+  omdbGetList,
+  omdbGetItem
 };

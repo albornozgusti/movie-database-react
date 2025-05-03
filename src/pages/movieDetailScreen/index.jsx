@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import Results from "../../components/results";
 import MovieDetail from '../../components/MovieDetail';
 import SearchContainer from "../../components/SearchContainer";
 
