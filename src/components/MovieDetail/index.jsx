@@ -1,8 +1,9 @@
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 
-const Item = ({itemData}) =>{
+const MovieDetail = ({itemData}) =>{
   const {
     Poster,
     Title,
@@ -10,6 +11,11 @@ const Item = ({itemData}) =>{
     Year,
     imdbID
   } = itemData;
+
+  useEffect(() => {
+    console.log('estoy en detalle', itemData)
+  }, []);
+
   return(
     <div className="flex flex-row mx-6 my-6 max-w-md border-solid border-2 p-2 grow place-content-around content-center">
       <img className="max-w-48 max-h-48" src={Poster} alt={`${Title}`}/>
@@ -25,8 +31,8 @@ const Item = ({itemData}) =>{
   );
 }
 
-Item.propTypes = {
+MovieDetail.propTypes = {
   itemData: PropTypes.object.isRequired
 }
 
-export default Item;
+export default MovieDetail;

@@ -10,8 +10,8 @@ import {omdbGetList} from '../../services/omdb';
 
 const SearchContainer = ({searchParams, setSearchParams, setResults}) => {
   const [showFilters, setShowFilters] = useState(true);
-  const apiUrl = process.env.VITE_API_URL;
-  const apiKey = process.env.VITE_API_KEY;
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiKey = import.meta.env.VITE_API_KEY;
 
     console.log(searchParams)
     const {title, releaseYear, type} = searchParams;

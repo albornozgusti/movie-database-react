@@ -8,9 +8,10 @@ const omdbGetList = (params) => {
     title,
     releaseYear,
     type,
+    page = 1
   } = params;
   console.log('PARAMS: ', params);
-  return axios.get(`${apiUrl}apikey=${apiKey}&s=${title}&type=${type}&y=${releaseYear}`)
+  return axios.get(`${apiUrl}apikey=${apiKey}&s=${title}&type=${type}&y=${releaseYear}&page=${page}`)
   .then((response) => {
     return response.data;
   })
